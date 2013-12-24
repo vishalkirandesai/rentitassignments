@@ -62,7 +62,7 @@ public class PurchaseOrderRestController {
 		logger.debug("PurchaseOrder retrieved -->"+purchaseOrder.toString());
 		PurchaseOrderResource purchaseOrderResource = PurchaseOrderResourceAssembler.getPurchaseOrderResource(purchaseOrder);
 
-		ResponseEntity<PurchaseOrderResource> responseEntity = new ResponseEntity<PurchaseOrderResource>(purchaseOrderResource,HttpStatus.ACCEPTED);
+		ResponseEntity<PurchaseOrderResource> responseEntity = new ResponseEntity<PurchaseOrderResource>(purchaseOrderResource,HttpStatus.OK);
 		return responseEntity;
 	}
 	
