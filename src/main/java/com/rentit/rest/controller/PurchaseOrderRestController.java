@@ -1,9 +1,11 @@
 package com.rentit.rest.controller;
 
+import java.lang.reflect.Method;
 import java.net.URI;
 import java.util.Date;
 import java.util.List;
 
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.rentit.main.Plant;
 import com.rentit.main.PurchaseOrder;
 import com.rentit.main.exception.PurchaseOrderException;
+import com.rentit.main.util.ExtendedLink;
 import com.rentit.main.util.POStatus;
 import com.rentit.main.util.PlantResourceAssembler;
 import com.rentit.main.util.PurchaseOrderResourceAssembler;
@@ -61,7 +64,17 @@ public class PurchaseOrderRestController {
 		}
 		logger.debug("PurchaseOrder retrieved -->"+purchaseOrder.toString());
 		PurchaseOrderResource purchaseOrderResource = PurchaseOrderResourceAssembler.getPurchaseOrderResource(purchaseOrder);
-
+		switch (purchaseOrder.getStatus()) { 
+		 case ACCEPTED: 
+		 case REJECTED:
+		 Method _cancelPO = PurchaseOrderRestController.class.getMethod("cancelPurchaseOrder",Long.class);
+		 String cancelLink = linkTo(_cancelPO, purchaseOrder.getId()).toUri().toString(); 
+		 purchaseOrderResource.add(new ExtendedLink(cancelLink, "cancelPurchaseOrder", "DELETE")); 
+		 
+		 break; 
+		 default: 
+		 break; 
+		 }
 		ResponseEntity<PurchaseOrderResource> responseEntity = new ResponseEntity<PurchaseOrderResource>(purchaseOrderResource,HttpStatus.OK);
 		return responseEntity;
 	}
