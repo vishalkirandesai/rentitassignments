@@ -25,23 +25,23 @@
 	<authentication-manager alias="authenticationManager">
 		<!-- SHA-256 values can be produced using 'echo -n your_desired_password 
 			| sha256sum' (using normal *nix environments) -->
-<!-- 		<authentication-provider> -->
-<!-- 			<password-encoder hash="sha-256" /> -->
-<!-- 			<user-service> -->
-<!-- 				<user name="admin" -->
-<!-- 					password="8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918" -->
-<!-- 					authorities="ROLE_ADMIN" /> -->
-<!-- 				<user name="user" -->
-<!-- 					password="04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb" -->
-<!-- 					authorities="ROLE_USER" /> -->
-<!-- 			</user-service> -->
-<!-- 		</authentication-provider> -->
 		<authentication-provider>
-			<jdbc-user-service data-source-ref="dataSource"
-				users-by-username-query="SELECT username, password, enabled FROM users WHERE username = ?;"
-
-				authorities-by-username-query="SELECT p.username, a.authority FROM users p, authorities a, assignments ra WHERE p.id = ra.user_rent_it AND a.id = ra.authority AND p.username = ?;" />
+			<password-encoder hash="sha-256" />
+			<user-service>
+				<user name="admin"
+					password="8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+					authorities="ROLE_ADMIN" />
+				<user name="user"
+					password="04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb"
+					authorities="ROLE_USER" />
+			</user-service>
 		</authentication-provider>
+<!-- 		<authentication-provider> -->
+<!-- 			<jdbc-user-service data-source-ref="dataSource" -->
+<!-- 				users-by-username-query="SELECT username, password, enabled FROM users WHERE username = ?;" -->
+
+<!-- 				authorities-by-username-query="SELECT p.username, a.authority FROM users p, authorities a, assignments ra WHERE p.id = ra.user_rent_it AND a.id = ra.authority AND p.username = ?;" /> -->
+<!-- 		</authentication-provider> -->
 
 	</authentication-manager>
 </beans:beans>
