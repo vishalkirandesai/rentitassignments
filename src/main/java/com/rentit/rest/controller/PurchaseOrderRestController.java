@@ -52,7 +52,7 @@ public class PurchaseOrderRestController {
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/{id}")
-	public ResponseEntity<PurchaseOrderResource> getPurchaseOrder(@PathVariable int id) throws NoSuchMethodException, SecurityException, PurchaseOrderException{
+	public ResponseEntity<PurchaseOrderResource> getPurchaseOrder(@PathVariable Long id) throws NoSuchMethodException, SecurityException, PurchaseOrderException{
 		PurchaseOrder purchaseOrder = purchaseOrderRepository.findPurchaseOrderById(id);
 		logger.debug("Entered getPurchaseOrder() PurchaseOrder id -->"+id);
 		if(purchaseOrder == null){
