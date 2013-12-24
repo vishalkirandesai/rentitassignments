@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,9 @@ import com.rentit.main.util.PlantResourceAssembler;
 import com.rentit.main.util.PurchaseOrderResourceAssembler;
 import com.rentit.repository.PlantRepository;
 import com.rentit.repository.PurchaseOrderRepository;
-import com.rentit.rest.PlantResourceList;
 import com.rentit.rest.PurchaseOrderResource;
 import com.rentit.rest.PurchaseOrderResourceList;
+import com.rentit.soap.PlantResourceList;
 import com.rentit.web.PurchaseOrderController;
 
 @Controller

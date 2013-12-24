@@ -4,7 +4,7 @@
 package com.rentit.rest;
 
 import com.rentit.rest.POUpdateRequestResource;
-import com.rentit.rest.PlantResource;
+import com.rentit.soap.PlantResource;
 
 privileged aspect POUpdateRequestResource_Roo_JavaBean {
     

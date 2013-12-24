@@ -4,6 +4,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
 
+import com.rentit.soap.PlantResource;
+
 @RooJavaBean
 @XmlRootElement(name="poupdate")
 public class POUpdateRequestResource {

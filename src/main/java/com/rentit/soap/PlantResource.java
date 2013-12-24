@@ -1,4 +1,4 @@
-package com.rentit.rest;
+package com.rentit.soap;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -8,7 +8,7 @@ import com.rentit.main.util.ResourceSupport;
 
 @RooJavaBean
 @XmlRootElement(name="plant")
-public class PlantResource extends ResourceSupport{
+public class PlantResource {
 	
 	private Long pId;
 	private float price;

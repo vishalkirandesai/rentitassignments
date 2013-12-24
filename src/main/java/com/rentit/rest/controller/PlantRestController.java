@@ -20,8 +20,8 @@ import com.rentit.main.Plant;
 import com.rentit.main.exception.InvalidHirePeriodException;
 import com.rentit.main.util.PlantResourceAssembler;
 import com.rentit.repository.PlantRepository;
-import com.rentit.rest.PlantResource;
-import com.rentit.rest.PlantResourceList;
+import com.rentit.soap.PlantResource;
+import com.rentit.soap.PlantResourceList;
 
 @Controller
 @RequestMapping("/rest/plants")

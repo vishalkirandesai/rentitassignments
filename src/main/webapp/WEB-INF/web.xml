@@ -85,6 +85,17 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     
+    <servlet> 
+<servlet-name>jaxws-servlet</servlet-name> 
+ <servlet-class> 
+com.sun.xml.ws.transport.http.servlet.WSSpringServlet 
+</servlet-class> 
+</servlet>
+    <servlet-mapping> 
+ <servlet-name>jaxws-servlet</servlet-name> 
+ <url-pattern>/PlantSoapService</url-pattern> 
+</servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>RentIt</servlet-name>
         <url-pattern>/</url-pattern>

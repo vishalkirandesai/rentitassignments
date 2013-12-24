@@ -6,20 +6,11 @@ import java.util.List;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 
 import com.rentit.main.Plant;
-import com.rentit.rest.PlantResource;
-import com.rentit.rest.PlantResourceList;
 import com.rentit.rest.controller.PlantRestController;
+import com.rentit.soap.PlantResource;
+import com.rentit.soap.PlantResourceList;
 
-public class PlantResourceAssembler extends ResourceAssemblerSupport<Plant,PlantResource>{
-
-	public PlantResourceAssembler(){
-		super(PlantRestController.class,PlantResource.class);
-	}
-	
-	@Override
-	public PlantResource toResource(Plant plant){
-		return getPlantResource(plant);
-	}
+public class PlantResourceAssembler {
 	
 	public static PlantResource getPlantResource(Plant plant){
 		PlantResource plantResource = new PlantResource();

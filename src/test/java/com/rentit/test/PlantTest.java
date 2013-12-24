@@ -17,8 +17,8 @@ import org.junit.Test;
 
 import com.rentit.main.Plant;
 import com.rentit.main.util.PlantResourceAssembler;
-import com.rentit.rest.PlantResource;
-import com.rentit.rest.PlantResourceList;
+import com.rentit.soap.PlantResource;
+import com.rentit.soap.PlantResourceList;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
