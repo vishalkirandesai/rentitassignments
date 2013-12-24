@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0"
+		xmlns:sec="http://www.springframework.org/security/tags">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_rentit_main_PurchaseOrder" object="${purchaseorder}" path="/purchaseorders" z="k5HhXLBQ8Oq40NzaST8utqAztSI=">
+        <field:display field="siteId" id="s_com_rentit_main_PurchaseOrder_siteId" object="${purchaseorder}" z="3kRXoySWOTaNIG6/ziznwzME1RI="/>
+        <field:display field="companyName" id="s_com_rentit_main_PurchaseOrder_companyName" object="${purchaseorder}" z="sxnWm5nIfMyOCE3ECgm8ke794rE="/>
+        <field:display date="true" dateTimePattern="${purchaseOrder_startdate_date_format}" field="startDate" id="s_com_rentit_main_PurchaseOrder_startDate" object="${purchaseorder}" z="lOR/C5C75vtAJTmBGkaIEMpB9EQ="/>
+        <field:display date="true" dateTimePattern="${purchaseOrder_enddate_date_format}" field="endDate" id="s_com_rentit_main_PurchaseOrder_endDate" object="${purchaseorder}" z="8EoSCcrLrhnqUV7CZzr2yyvtGWI="/>
+        <field:display field="price" id="s_com_rentit_main_PurchaseOrder_price" object="${purchaseorder}" z="siwv/CwiZ0+tWyz7lAZPMA9tP0E="/>
+        <field:display field="customerEmail" id="s_com_rentit_main_PurchaseOrder_customerEmail" object="${purchaseorder}" z="7e8nch1cEK2gLpjT2YBJBjBeeJY="/>
+        <field:display field="plant" id="s_com_rentit_main_PurchaseOrder_plant" object="${purchaseorder}" z="9WCzeB7mOUbXa+LIgPCZxIhnsaA="/>
+        <field:display field="status" id="s_com_rentit_main_PurchaseOrder_status" object="${purchaseorder}" z="rnxxL/Goe+Efghn71TVQia8k2Io="/>
+   </page:show>
+    	    <sec:authorize ifAllGranted="ROLE_DELIVERY_MANAGER">
+   	
+    <button><a href="/purchaseorders/${id}/rejected">Set as Rejected</a></button>
+    <button><a href="/purchaseorders/${id}/delivered">Set as Delivered</a></button>
+    </sec:authorize>
+    <sec:authorize ifAllGranted="ROLE_DEPOT_MANAGER">
+    <button><a href="/purchaseorders/${id}/dispatched">Set as Dispatched</a></button>
+    <button><a href="/purchaseorders/${id}/returned">Set as Returned</a></button>
+    </sec:authorize>
+    
+</div>

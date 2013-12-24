@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rentit_main_Plant" items="${plants}" z="1zMYahr8zjhq4ykefIXESzsN5gE=">
+        <table:table data="${plants}" id="l_com_rentit_main_Plant" path="/plants" z="grbRy9e6y9d9brPtf4sPS9LjPxQ=">
+            <table:column id="c_com_rentit_main_Plant_price" property="price" z="3Xq0Ze7DuLgLUMsVtVSyhOIidWE="/>
+            <table:column id="c_com_rentit_main_Plant_name" property="name" z="ls1BCswVunYhDtlyiBxHzaXcvdc="/>
+            <table:column id="c_com_rentit_main_Plant_description" property="description" z="1ogWDYi2qkL+6s0b3jTjcss5QxU="/>
+            <table:column date="true" dateTimePattern="${plant_startdate_date_format}" id="c_com_rentit_main_Plant_startDate" property="startDate" z="2zEqLYZi9voCb+WgBrzzT7pv5Lo="/>
+            <table:column date="true" dateTimePattern="${plant_enddate_date_format}" id="c_com_rentit_main_Plant_endDate" property="endDate" z="ODeQgRciPPQu/MFMEgV1lrRwxiA="/>
+        </table:table>
+    </page:list>
+</div>

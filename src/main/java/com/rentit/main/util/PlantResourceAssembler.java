@@ -1,0 +1,50 @@
+package com.rentit.main.util;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
+
+import com.rentit.main.Plant;
+import com.rentit.rest.PlantResource;
+import com.rentit.rest.PlantResourceList;
+import com.rentit.rest.controller.PlantRestController;
+
+public class PlantResourceAssembler extends ResourceAssemblerSupport<Plant,PlantResource>{
+
+	public PlantResourceAssembler(){
+		super(PlantRestController.class,PlantResource.class);
+	}
+	
+	@Override
+	public PlantResource toResource(Plant plant){
+		return getPlantResource(plant);
+	}
+	
+	public static PlantResource getPlantResource(Plant plant){
+		PlantResource plantResource = new PlantResource();
+		plantResource.setPId(plant.getId());
+		plantResource.setName(plant.getName());
+		plantResource.setPrice(plant.getPrice());
+		plantResource.setDescription(plant.getDescription());
+		
+		return plantResource;
+	}
+	
+	public static Plant getPlant(PlantResource plantResource){
+		Plant plant = new Plant();
+		plant.setId(plantResource.getPId());
+		plant.setName(plantResource.getName());
+		plant.setPrice(plantResource.getPrice());
+		plant.setDescription(plantResource.getDescription());
+		return plant;
+	}
+	
+	public static PlantResourceList getPlantResourceList(List<Plant> plants){
+		List<PlantResource> plantResources = new ArrayList<PlantResource>();
+		for(Plant plant:plants){
+			plantResources.add(getPlantResource(plant));
+		}
+		return new PlantResourceList(plantResources);
+	}
+}

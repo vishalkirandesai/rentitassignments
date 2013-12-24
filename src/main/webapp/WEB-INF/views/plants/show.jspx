@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_rentit_main_Plant" object="${plant}" path="/plants" z="/Q7z0ng7mMOo9OU+h9HFSuJIVwg=">
+        <field:display field="price" id="s_com_rentit_main_Plant_price" object="${plant}" z="6OpCdG9yVmeOILiQsDU+BGzylDY="/>
+        <field:display field="name" id="s_com_rentit_main_Plant_name" object="${plant}" z="cEJK0/+jq06rE5A18hukPpYKR9c="/>
+        <field:display field="description" id="s_com_rentit_main_Plant_description" object="${plant}" z="O4VdiDYnUXKkgh+iPU6oTID99Xk="/>
+        <field:display date="true" dateTimePattern="${plant_startdate_date_format}" field="startDate" id="s_com_rentit_main_Plant_startDate" object="${plant}" z="RxzyaQx0OfacQbmB6shSyzU26EM="/>
+        <field:display date="true" dateTimePattern="${plant_enddate_date_format}" field="endDate" id="s_com_rentit_main_Plant_endDate" object="${plant}" z="DV1jvpEUnw7HRYKshpHS54nvZJY="/>
+    </page:show>
+</div>

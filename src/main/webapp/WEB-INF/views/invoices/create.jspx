@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_rentit_main_Invoice" modelAttribute="invoice" path="/invoices" render="${empty dependencies}" z="Hk7MKinTvJJ6WMTLzNuenl2+FGI=">
+        <field:input field="amountDue" id="c_com_rentit_main_Invoice_amountDue" z="KmXahEwAKZSrrgGLTFienJgFokg="/>
+        <field:datetime dateTimePattern="${invoice_duedate_date_format}" field="dueDate" id="c_com_rentit_main_Invoice_dueDate" z="/oYlxg9iLMHabZK7+CLgNxEb0a4="/>
+        <field:select field="purchaseOrderId" id="c_com_rentit_main_Invoice_purchaseOrderId" itemValue="id" items="${purchaseorders}" path="/purchaseorders" z="PxY3eKGBEP4SUQ1IfGqfXYRoNyU="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_rentit_main_Invoice" render="${not empty dependencies}" z="pYz0n3WKdFOSOf9UEIt3BfyCd3g="/>
+</div>
